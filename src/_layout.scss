@@ -10,7 +10,7 @@
   @include padding-movile();
 
   @include query(md) {
-    height: 100vh;
+    height: 120vh;
     background: url("../images/bg-intro-desktop.png") no-repeat center $red;
     @include padding-tablet();
   }
