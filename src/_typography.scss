@@ -1,0 +1,91 @@
+html {
+  font-size: 16px;
+}
+
+body {
+  text-align: center;
+  line-height: 1.6;
+  font-family: $poppins;
+}
+
+h1 {
+  font-weight: $bold;
+  color: $white;
+  @include font-size($h1-font-sizes);
+}
+
+p {
+  color: $graish;
+  font-weight: $medium;
+  @include font-size($p-font-sizes);
+}
+
+.head {
+  background-color: $blue;
+
+  &__text-bold {
+    font-weight: $semi-bold;
+    color: $white;
+  }
+}
+
+.form {
+  background-color: $white;
+
+  &__input {
+    @include font-size($input-font-sizes);
+    color: $dark-blue;
+    font-weight: $semi-bold;
+
+  }
+
+  &__input-error{
+    @include font-size($small-font-sizes);
+    color: $red;
+  }
+
+  &__successful-message{
+    @include font-size($small-font-sizes);
+        color: $green;
+  }
+
+  &__error-message{
+    @include font-size($small-font-sizes);
+    color: $red;
+}
+
+  &__error,
+  &__validation{
+    font-size: 1.2rem;
+    color: $red;
+  }
+}
+
+.terms-services {
+  
+  &__text {
+    color: $grayish-blue;
+    @include font-size($small-font-sizes);
+  }
+
+  &__bold{
+    font-weight: $semi-bold;
+    color: $red;
+  }
+}
+
+.button-submit {
+  text-transform: uppercase;
+  background-color: $green;
+}
+
+.footer{
+  &__atribution{
+    @include font-size($small-font-sizes);
+  }
+
+  &__bold{
+    color: $white;
+    font-weight: $semi-bold;
+  }
+}

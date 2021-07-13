@@ -1,0 +1,56 @@
+.form-section {
+  width: 100%;
+  height: auto;
+  background: url("../images/bg-intro-mobile.png") no-repeat center $red;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  place-items: center;
+  gap: 3.5rem;
+  @include padding-movile();
+
+  @include query(md) {
+    height: 100vh;
+    background: url("../images/bg-intro-desktop.png") no-repeat center $red;
+    @include padding-tablet();
+  }
+
+  @include query(lg) {
+    @include padding-desktop();
+   
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+  }
+
+  @include query(lg-2){
+    @include padding-desktop-xxl();
+  }
+
+  .title {
+    @include query(lg) {
+      text-align: start;
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    &__h1 {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .container {
+    display: grid;
+    gap: 1rem;
+    @include query(lg) {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+
+  .footer {
+    @include query(lg) {
+      grid-column: 1/3;
+      grid-row: 2;
+    }
+  }
+}

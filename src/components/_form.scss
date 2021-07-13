@@ -1,0 +1,99 @@
+
+
+.head{
+    padding: 1rem 4rem;
+    border-radius: 0.6rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 1.95px 1.95px 2.6px;
+}
+
+.form{
+    border-radius: 0.6rem;
+    padding: 1.5rem;
+    display: grid;
+    gap: 1.5rem;
+
+    &__control{
+        display: grid;
+        gap: 0.5rem;
+    }
+
+    &__control-input{
+        position: relative;
+        display: grid;
+    }
+    
+    &__input{
+        padding: 1rem;
+        opacity: 0.8;
+        border-radius: 0.3rem;
+        border: 0.11rem solid $grayish-blue;
+        @include transition(all .3s ease-in-out);
+
+        &:focus,
+        &:hover{
+            border-color: $dark-blue;
+            opacity: 1;
+        }
+    }
+    //icons
+    &__error,
+    &__validation{
+        display: none;
+        position: absolute;
+        right: 0.6rem;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__input-error{
+        text-align: end;
+        display: none;
+    }
+
+    &__input-error-active{
+        display: block;
+    }
+
+    &__successful-message{
+        display: none;
+    }
+
+    &__successful-message-active{
+        display: block;
+    }
+
+    &__error-message{
+        display: none;
+    }
+
+    &__error-message-active{
+        display: block;
+    }
+
+
+    //Validation styles
+
+    &__control-correct .form__validation{
+        color: $green;
+    }
+
+    //Icon
+    &__control-correct .form__error{
+        display:block;
+        color: $green;
+    }
+
+    &__control-correct .form__input{
+        border: 0.11rem solid $green;
+    }
+
+    &__control-incorrect .form__error{
+        display: block;
+        color: $red;
+    }
+
+    &__control-incorrect .form__input{
+        border: 0.11rem solid $red;
+    }    
+}
+
