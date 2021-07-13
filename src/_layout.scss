@@ -10,12 +10,13 @@
   @include padding-movile();
 
   @include query(md) {
-    height: 120vh;
+    height: 100vh;
     background: url("../images/bg-intro-desktop.png") no-repeat center $red;
     @include padding-tablet();
   }
 
   @include query(lg) {
+    
     @include padding-desktop();
    
     grid-template-columns: 1fr 1fr;
