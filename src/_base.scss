@@ -180,7 +180,11 @@ body {
   width: 100%;
 }
 
-input[type='submit']{
+input[type="submit"]{
+  display: none;
+}
+
+::-ms-reveal{
   display: none;
 }
 

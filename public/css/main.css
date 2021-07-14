@@ -16,6 +16,14 @@ body {
   width: 100%;
 }
 
+input[type="submit"] {
+  display: none;
+}
+
+::-ms-reveal {
+  display: none;
+}
+
 button {
   border: none;
   background-color: white;
