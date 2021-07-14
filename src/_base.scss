@@ -180,6 +180,10 @@ body {
   width: 100%;
 }
 
+input[type='submit']{
+  display: none;
+}
+
 button {
   border: none;
   background-color: white;
