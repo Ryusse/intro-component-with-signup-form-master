@@ -85,10 +85,11 @@ form.addEventListener('submit', (e) => {
 	
 		form.reset();
 		document.querySelector('.form__successful-message').classList.add('form__successful-message-active');
-
+		
 		setTimeout(() => {
 			document.querySelector('.form__successful-message').classList.remove('form__successful-message-active');
-		},5000);
+			location.reload();
+		},3000);
 
 		//remove icons
 		document.querySelectorAll('.form__control-correct').forEach((icon) =>{
