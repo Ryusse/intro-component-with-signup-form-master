@@ -4,19 +4,17 @@ This is a solution to the [Intro component with sign up form challenge on Fronte
 
 ## Table of contents
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
+- [Frontend Mentor - Intro component with sign up form solution](#frontend-mentor---intro-component-with-sign-up-form-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Continued development](#continued-development)
+  - [Author](#author)
 
 ## Overview
 
@@ -32,20 +30,11 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![](./screenshot/screenshot-deskptop.jpg)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [View demo](https://intro-component-with-singup-form-master.netlify.app/)
 
 ## My process
 
@@ -53,62 +42,189 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 - Semantic HTML5 markup
 - CSS custom properties
-- Flexbox
+- Sass
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- Javascript
+- Nodejs
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+ I learned the use of sass maps and then implementing it in handling media queries and font sizes from this blog [responsive-typography-with-sass-maps](https://www.smashingmagazine.com/2015/06/responsive-typography-with-sass-maps/#top)
 
-To see how you can add code snippets, see below:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
+So implement the maps and mixins in the project, it looks like this
+
+```scss
+
+$breakpoints: (
+  xs   :  25em, // 400px
+  ms   :  34em, // 544px
+  md   :  48em, // 768px
+  lg   :  55em, // 960px
+  lg-2 :  60em,
+  xl   :  80em, // 1280px
+  xxl  :  90em  // 1440px
+);
+
+$h1-font-sizes: (
+  null :  1.8rem,
+  xs   :  1.8rem,
+  ms   :  1.8rem,
+  md   :  1.7rem,
+  lg   :  2.5rem,
+  lg-2 :  3rem,
+  xl   :  3rem,
+  xxl  :  3rem
+);
+
+$p-font-sizes: (
+  null :  0.95rem,
+  xs   :  0.95rem,
+  ms   :  0.95rem,
+  md   :  0.9rem,
+  lg   :  0.9rem,
+  lg-2 :  0.9rem,
+  xl   :  0.95rem,
+  xxl  :  0.95rem
+);
+
+$input-font-sizes: (
+  null :  0.8rem,
+  xs   :  0.8rem,
+  ms   :  0.8rem,
+  md   :  0.75rem,
+  lg   :  0.75rem,
+  lg-2 :  0.75rem,
+  xl   :  0.80rem,
+  xxl  :  0.80rem
+);
+
+$small-font-sizes: (
+  null :  0.75rem,
+  xs   :  0.75rem,
+  ms   :  0.75rem,
+  md   :  0.65rem,
+  lg   :  0.65rem,
+  lg-2 :  0.8rem,
+  xl   :  0.8rem,
+  xxl  :  0.8rem
+);
+
+
+
+// ==============================================================================================================
+
+// ======MIXINS====== //
+
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      font-size: $fs-font-size;
+    }
+    @else {
+      // If $fs-font-size is a key that exists in $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media screen and (min-width: $fs-breakpoint) {
+        font-size: $fs-font-size;
+      }
+    }
+  }
 }
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+
+@mixin query($breakpoint) {
+  // If the breakpoint exists in the map.
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    // Write the media query.
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
 }
+
+
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+
+  Then I implement a grid system with css grid.
+
+```scss
+
+/*Movile First*/
+
+.form-section {
+  
+  display: grid;
+  grid-template-columns: 2vw repeat(4, 1fr) 2vw;
+  grid-template-rows: auto;
+  place-items: center;
+  gap: 3.5rem 1rem ;
+
+  grid-template-areas:
+    ". title title title title ."
+    ". container container container container ."
+    ". footer footer footer footer .";
+  
+```
+
+Making use of the mixins of media queries ..
+
+```scss
+
+/*Tablet*/
+
+@include query(md) {
+
+    grid-template-columns:repeat(8, 1fr);
+    grid-template-rows:0.2fr 1fr 0.2fr;
+    grid-template-areas:
+    ". title title title title title title ."
+    ". container container container container container container ."
+    ". footer footer footer footer footer footer.";
+  }
+
+```
+
+```scss
+
+/*Deskptop*/
+
+@include query(lg-2) {
+    gap: 1rem;
+    padding: 1rem;
+    
+    grid-template-columns:repeat(12, 1fr);
+    grid-template-rows:2vw auto 2vw;
+    grid-template-areas:
+    ". . . . . . . . . . . ."
+    ". title title title title . container container container container  container ."
+    ". footer footer footer footer footer footer footer footer footer footer .";
+  }
+
+```
+
+
+
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+- I would like to improve the handling of the BEM methodology in css for future projects.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- I plan to implement vuejs, because it is a scalable framework and this project can grow, in addition to the speed of loading the page and the experience of the developer using this framework.
 
-### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Frontend Mentor - [@Ryusse](https://www.frontendmentor.io/profile/Ryusse)
+- Linkedin - [Joel Angel](https://www.linkedin.com/in/joel-angel-oca%C3%B1o-ore-9a52b5202/)
