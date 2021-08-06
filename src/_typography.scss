@@ -9,6 +9,7 @@ body {
 }
 
 h1 {
+  line-height: 1.3;
   font-weight: $bold;
   color: $white;
   @include font-size($h1-font-sizes);
@@ -20,57 +21,70 @@ p {
   @include font-size($p-font-sizes);
 }
 
-.head {
-  background-color: $blue;
-
-  &__text-bold {
-    font-weight: $semi-bold;
-    color: $white;
-  }
+input {
+  @include font-size($input-font-sizes);
+  font-weight: $semi-bold;
 }
 
-.form {
-  background-color: $white;
-
-  &__input {
-    @include font-size($input-font-sizes);
-    color: $dark-blue;
-    font-weight: $semi-bold;
-
-  }
-
-  &__input-error{
-    @include font-size($small-font-sizes);
-    color: $red;
-  }
-
-  &__successful-message{
-    @include font-size($small-font-sizes);
-        color: $green;
-  }
-
-  &__error-message{
-    @include font-size($small-font-sizes);
-    color: $red;
+small {
+  @include font-size($small-font-sizes);
 }
 
-  &__error,
-  &__validation{
-    font-size: 1.2rem;
-    color: $red;
-  }
+.title {
+  text-align: start;
 }
 
-.terms-services {
-  
-  &__text {
-    color: $grayish-blue;
-    @include font-size($small-font-sizes);
+.container {
+  .head {
+    background-color: $blue;
+    &__text-bold {
+      font-weight: $semi-bold;
+      color: $white;
+    }
   }
+  .form {
+    background-color: $white;
 
-  &__bold{
-    font-weight: $semi-bold;
-    color: $red;
+    &__input {
+      color: $dark-blue;
+      &:focus,
+      &:hover {
+        border-color: $dark-blue;
+        opacity: 1;
+      }
+    }
+
+    //Icons
+    &__error,
+    &__validation {
+      color: $red;
+      font-size: 1.2rem;
+    }
+
+    //Error
+    &__input-error,
+    &__error-message,
+    &__control-incorrect .form__error {
+      color: $red;
+    }
+
+    //Successful
+    &__successful-message,
+    &__control-correct .form__validation,
+    &__control-correct .form__error {
+      color: $green;
+    }
+
+    .terms-services {
+      &__text {
+        color: $grayish-blue;
+      }
+    
+      &__bold {
+        font-weight: $semi-bold;
+        color: $red;
+      }
+    }
   }
 }
 
@@ -79,12 +93,12 @@ p {
   background-color: $green;
 }
 
-.footer{
-  &__atribution{
-    @include font-size($small-font-sizes);
+.footer {
+  &__atribution {
+    color: $graish;
   }
 
-  &__bold{
+  &__bold {
     color: $white;
     font-weight: $semi-bold;
   }

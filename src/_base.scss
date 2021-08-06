@@ -39,10 +39,21 @@ $breakpoints: (
   xs   :  25em, // 400px
   ms   :  34em, // 544px
   md   :  48em, // 768px
-  lg   :  60em, // 960px
-  lg-2 :  70em,
+  lg   :  55em, // 960px
+  lg-2 :  60em,
   xl   :  80em, // 1280px
   xxl  :  90em  // 1440px
+);
+
+$h1-font-sizes: (
+  null :  1.8rem,
+  xs   :  1.8rem,
+  ms   :  1.8rem,
+  md   :  1.7rem,
+  lg   :  2.5rem,
+  lg-2 :  3rem,
+  xl   :  3rem,
+  xxl  :  3rem
 );
 
 $p-font-sizes: (
@@ -78,16 +89,6 @@ $small-font-sizes: (
   xxl  :  0.8rem
 );
 
-$h1-font-sizes: (
-  null :  1.8rem,
-  xs   :  1.8rem,
-  ms   :  1.8rem,
-  md   :  1.7rem,
-  lg   :  2rem,
-  lg-2 :  2.5rem,
-  xl   :  2.5rem,
-  xxl  :  2.5rem
-);
 
 
 // ==============================================================================================================
@@ -125,30 +126,6 @@ $h1-font-sizes: (
     // Log a warning.
     @warn 'Invalid breakpoint: #{$breakpoint}.';
   }
-}
-
-
-
-//Padding
-@mixin padding-movile() {
-  padding: 4rem 1.7rem 4rem 1.7rem;
-}
-
-@mixin padding-tablet() {
-  padding: 8rem 10rem 8rem 10rem;
-}
-
-@mixin padding-desktop() {
-  padding: 5rem 3rem 5rem 3rem;
-}
-
-@mixin padding-desktop-xxl() {
-  padding: 3rem 7rem 3rem 7rem;
-}
-
-//margin
-@mixin margin($top: 0, $left: 0, $bot: 0, $right: 0) {
-  margin: $top $left $bot $right;
 }
 
 //transitions
