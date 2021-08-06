@@ -31,7 +31,9 @@ small {
 }
 
 .title {
-  text-align: start;
+  @include query(lg){
+    text-align: start;
+  }
 }
 
 .container {
