@@ -1,0 +1,109 @@
+@use './base' as *;
+
+html {
+    font-size: 16px;
+  }
+  
+  body {
+    text-align: center;
+    line-height: 1.6;
+    font-family: $poppins;
+  }
+  
+  h1 {
+    line-height: 1.3;
+    font-weight: $bold;
+    color: $white;
+    @include font-size($h1-font-sizes);
+  }
+  
+  p {
+    color: $graish;
+    font-weight: $medium;
+    @include font-size($p-font-sizes);
+  }
+  
+  input {
+    @include font-size($input-font-sizes);
+    font-weight: $semi-bold;
+  }
+  
+  small {
+    @include font-size($small-font-sizes);
+  }
+  
+  .title {
+    @include query(lg){
+      text-align: start;
+    }
+  }
+  
+  .container {
+    .head {
+      background-color: $blue;
+      &__text-bold {
+        font-weight: $semi-bold;
+        color: $white;
+      }
+    }
+    .form {
+      background-color: $white;
+  
+      &__input {
+        color: $dark-blue;
+        &:focus,
+        &:hover {
+          border-color: $dark-blue;
+          opacity: 1;
+        }
+      }
+  
+      //Icons
+      &__error,
+      &__validation {
+        color: $red;
+        font-size: 1.2rem;
+      }
+  
+      //Error
+      &__input-error,
+      &__error-message,
+      &__control-incorrect .form__error {
+        color: $red;
+      }
+  
+      //Successful
+      &__successful-message,
+      &__control-correct .form__validation,
+      &__control-correct .form__error {
+        color: $green;
+      }
+  
+      .terms-services {
+        &__text {
+          color: $grayish-blue;
+        }
+      
+        &__bold {
+          font-weight: $semi-bold;
+          color: $red;
+        }
+      }
+    }
+  }
+  
+  .button-submit {
+    text-transform: uppercase;
+    background-color: $green;
+  }
+  
+  .footer {
+    &__atribution {
+      color: $graish;
+    }
+  
+    &__bold {
+      color: $white;
+      font-weight: $semi-bold;
+    }
+  }

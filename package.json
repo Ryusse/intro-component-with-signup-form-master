@@ -1,0 +1,40 @@
+{
+  "name": "intro-component-with-signup-form-master",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ryusse/intro-component-with-signup-form-master.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ryusse/intro-component-with-signup-form-master/issues"
+  },
+  "homepage": "https://github.com/Ryusse/intro-component-with-signup-form-master#readme",
+  "dependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "autoprefixer": "^10.3.2",
+    "browser-sync": "^2.27.5",
+    "cssnano": "^5.0.8",
+    "dart-sass": "^1.25.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-terser": "^2.0.1",
+    "gup": "^2.0.4",
+    "postcss": "^8.3.6",
+    "resolve-url": "^0.2.1",
+    "urix": "^0.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^8.0.0"
+  }
+}

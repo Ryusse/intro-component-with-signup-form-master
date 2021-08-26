@@ -1,0 +1,75 @@
+@use './base' as *;
+
+body{
+    display: grid;
+    place-items: center;
+    background: url("../images/bg-intro-mobile.png") no-repeat center $red;
+  
+    @include query(md) {
+      background: url("../images/bg-intro-desktop.png") no-repeat center $red;
+    }
+  }
+  
+  .form-section {
+    max-width: 82rem;
+    padding: 3rem 0;
+    width: 100%;
+    height: auto;
+    
+    display: grid;
+    grid-template-columns: 2vw repeat(4, 1fr) 2vw;
+    grid-template-rows: auto;
+    place-items: center;
+    gap: 3.5rem 1rem ;
+  
+    grid-template-areas:
+      ". title title title title ."
+      ". container container container container ."
+      ". footer footer footer footer .";
+  
+    @include query(md) {
+  
+      grid-template-columns:repeat(8, 1fr);
+      grid-template-rows:0.2fr 1fr 0.2fr;
+      grid-template-areas:
+      ". title title title title title title ."
+      ". container container container container container container ."
+      ". footer footer footer footer footer footer.";
+    }
+  
+    @include query(lg-2) {
+      gap: 1rem;
+      padding: 1rem;
+      
+      grid-template-columns:repeat(12, 1fr);
+      grid-template-rows:2vw auto 2vw;
+      grid-template-areas:
+      ". . . . . . . . . . . ."
+      ". title title title title . container container container container  container ."
+      ". footer footer footer footer footer footer footer footer footer footer .";
+    }
+    @include query(lg-2){
+      height: 100vh;
+    }
+  
+    .title {
+      grid-area: title;
+    }
+  
+    .container {
+      grid-area: container;
+    }
+  
+    .footer {
+      grid-area: footer;
+    }
+  
+  
+  
+    .title {
+      display: grid;
+      place-items: center;
+      gap: 1rem;
+    }
+  
+  }
