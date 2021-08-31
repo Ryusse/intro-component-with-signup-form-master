@@ -2,6 +2,8 @@
 @use '../base' as *;
 
 .button-submit{
+    text-transform: uppercase;
+    background-color: $green;
     cursor: pointer;
     padding: 1rem;
     border-radius: 0.3rem;
