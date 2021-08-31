@@ -1,90 +1,121 @@
 @use '../base' as *;
 
 .container {
-    width: 100%;
+  width: 100%;
+  display: grid;
+  gap: 1.5rem;
+
+  .head {
+    background-color: $blue;
+    padding: 1rem 4rem;
+    border-radius: 0.6rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 1.95px 1.95px 2.6px;
+    &__text-bold {
+      color: $white;
+    }
+  }
+
+  .form {
+    background-color: $white;
+    border-radius: 0.6rem;
+    padding: 1.5rem;
     display: grid;
     gap: 1.5rem;
-  
-    .head {
-      padding: 1rem 4rem;
-      border-radius: 0.6rem;
-      box-shadow: rgba(0, 0, 0, 0.1) 1.95px 1.95px 2.6px;
-    }
-  
-    .form {
-      border-radius: 0.6rem;
-      padding: 1.5rem;
+
+    &__control {
       display: grid;
-      gap: 1.5rem;
-  
-      &__control {
-        display: grid;
-        gap: 0.5rem;
+      gap: 0.5rem;
+    }
+
+    &__control-input {
+      position: relative;
+      display: grid;
+    }
+
+    &__input {
+      color: $dark-blue;
+      padding: 1rem;
+      opacity: 0.8;
+      border-radius: 0.3rem;
+      border: 0.11rem solid $grayish-blue;
+      @include transition(all 0.3s ease-in-out);
+      &:focus,
+      &:hover {
+        border-color: $dark-blue;
+        opacity: 1;
       }
-  
-      &__control-input {
-        position: relative;
-        display: grid;
+    }
+    //icons
+    &__error,
+    &__validation {
+      display: none;
+      color: $red;
+
+      position: absolute;
+      right: 0.6rem;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &__input-error {
+      color: $red;
+      text-align: end;
+      display: none;
+    }
+
+    &__input-error-active {
+      display: block;
+    }
+
+    &__successful-message {
+      display: none;
+      color: $green;
+    }
+
+    &__successful-message-active {
+      display: block;
+    }
+
+    &__error-message {
+      display: none;
+      color: $red;
+    }
+
+    &__error-message-active {
+      display: block;
+    }
+
+    //Icon
+    &__control-correct .form__error {
+      display: block;
+      color: $green;
+    }
+    &__control-correct .form__validation {
+      color: $green;
+    }
+
+    &__control-correct .form__input {
+      border: 0.11rem solid $green;
+    }
+
+    &__control-incorrect .form__error {
+      display: block;
+      color: $red;
+    }
+
+    &__control-incorrect .form__input {
+      border: 0.11rem solid $red;
+    }
+
+    .terms-services {
+      &__text {
+        color: $grayish-blue;
       }
-  
-      &__input {
-        padding: 1rem;
-        opacity: 0.8;
-        border-radius: 0.3rem;
-        border: 0.11rem solid $grayish-blue;
-        @include transition(all 0.3s ease-in-out);
-      }
-      //icons
-      &__error,
-      &__validation {
-        display: none;
-  
-        position: absolute;
-        right: 0.6rem;
-        top: 50%;
-        transform: translate(-50%, -50%);
-      }
-  
-      &__input-error {
-        text-align: end;
-        display: none;
-      }
-  
-      &__input-error-active {
-        display: block;
-      }
-  
-      &__successful-message {
-        display: none;
-      }
-  
-      &__successful-message-active {
-        display: block;
-      }
-  
-      &__error-message {
-        display: none;
-      }
-  
-      &__error-message-active {
-        display: block;
-      }
-  
-      //Icon
-      &__control-correct .form__error {
-        display: block;
-      }
-  
-      &__control-correct .form__input {
-        border: 0.11rem solid $green;
-      }
-  
-      &__control-incorrect .form__error {
-        display: block;
-      }
-  
-      &__control-incorrect .form__input {
-        border: 0.11rem solid $red;
+
+      &__bold {
+        font-weight: $semi-bold;
+        color: $red;
       }
     }
   }
+}
