@@ -1,22 +1,16 @@
 # Frontend Mentor - Intro component with sign up form solution
 
-This is a solution to the [Intro component with sign up form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-component-with-signup-form-5cf91bd49edda32581d28fd1). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+<!-- This is a solution to the [Intro component with sign up form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-component-with-signup-form-5cf91bd49edda32581d28fd1). Frontend Mentor challenges help you improve your coding skills by building realistic projects.  -->
 
-## Table of contents
+<!-- ## Table of contents
 
 - [Frontend Mentor - Intro component with sign up form solution](#frontend-mentor---intro-component-with-sign-up-form-solution)
-  - [Table of contents](#table-of-contents)
-  - [Overview](#overview)
     - [The challenge](#the-challenge)
     - [Screenshot](#screenshot)
-    - [Links](#links)
-  - [My process](#my-process)
+    - [Demo](#demo)
     - [Built with](#built-with)
-    - [What I learned](#what-i-learned)
-    - [Continued development](#continued-development)
-  - [Author](#author)
 
-## Overview
+<!-- ## Overview -->
 
 ### The challenge
 
@@ -30,26 +24,25 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot/screenshot-deskptop.jpg)
+![](./screenshots/Desktop.png)
 
-### Links
+### Demo
 
 - Solution URL: [View demo](https://intro-component-with-singup-form-master.netlify.app/)
 
-## My process
+<!-- ## My process -->
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS custom properties
+- HTML
+- CSS
 - Sass
 - CSS Grid
-- Mobile-first workflow
 - Javascript
-- Nodejs
+- Mobile-first workflow
 
 
-### What I learned
+<!-- ### What I learned
 
  I learned the use of sass maps and then implementing it in handling media queries and font sizes from this blog [responsive-typography-with-sass-maps](https://www.smashingmagazine.com/2015/06/responsive-typography-with-sass-maps/#top)
 
@@ -227,4 +220,4 @@ Making use of the mixins of media queries ..
 ## Author
 
 - Frontend Mentor - [@Ryusse](https://www.frontendmentor.io/profile/Ryusse)
-- Linkedin - [Joel Angel](https://www.linkedin.com/in/joel-angel-oca%C3%B1o-ore-9a52b5202/)
+- Linkedin - [Joel Angel](https://www.linkedin.com/in/joel-angel-oca%C3%B1o-ore-9a52b5202/) -->
