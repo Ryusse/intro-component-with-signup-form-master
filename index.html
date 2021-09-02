@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Font awesome-->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="./dist/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./dist/css/main.css">
+
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+</head>
+
+<body>
+
+  <section class="form-section">
+
+    <div class="title">
+      <h1 class="title__h1">Learn to code by watching others</h1>
+      <p class="title__text">
+        See how experienced developers solve problems in real-time. Watching scripted tutorials
+        is great, but understanding how developers think is invaluable.</p>
+    </div>
+
+
+    <div class="container">
+
+      <p class="head"><span class="head__text-bold bold">Try it free 7 days </span> <span class="head__text">then $20/mo.
+          thereafter</span></p>
+
+       <!--Form-->
+
+      <form class="form" id="form" action="">
+
+        <!--Fisrt Name-->
+
+        <div class="form__control" id="first-name__control">
+          <div class="form__control-input">
+            <input class="form__input" id="first-name" name="first-name" type="text" placeholder="First Name">
+            <i class="form__error fas fa-times-circle"></i>
+          </div>
+          <small class="form__input-error">First Name cannot be empty</small>
+        </div>
+
+        <!--Fisrt Name End-->
+
+        <!--Last Name-->
+
+        <div class="form__control" id="last-name__control">
+          <div class="form__control-input">
+            <input class="form__input" id="last-name" name="last-name" type="text" placeholder="Last Name">
+            <i class="form__error fas fa-times-circle"></i>
+          </div>
+          <small class="form__input-error">Last Name cannot be empty</small>
+        </div>
+
+        <!--Last Name End-->
+
+        <!--Email-->
+
+        <div class="form__control" id="email__control">
+          <div class="form__control-input">
+            <input class="form__input" id="email" name="email" type="email" placeholder="Email Adress">
+            <i class="form__error fas fa-times-circle"></i>
+          </div>
+          <small class="form__input-error">Looks like this is not an email</small>
+        </div>
+
+        <!--Email End-->
+
+        <!--Password-->
+
+        <div class="form__control" id="password__control">
+          <div class="form__control-input">
+            <input class="form__input" id="password" name="password" type="password" placeholder="Password">
+            <i class="form__error fas fa-times-circle"></i>
+          </div>
+          <small class="form__input-error">Password cannot be empty</small>
+        </div>
+        
+        <!--Password End-->
+
+        <!--Button-->
+
+        <button class="button-submit" type="submit">
+          <p class="button-submit__text">Claim your free trial</p>
+        </button>
+        <small class="form__error-message">Please fill in the form</small>
+        <small class="form__successful-message">Submitted successfully!</small>
+
+         <!--Button End-->
+
+        <div class="terms-services">
+          <small class="terms-services__text">By clicking the button, you are agreeing to our <a href="#"
+              class="terms-services__bold">Terms and
+              Services</a></small>
+        </div>
+
+      </form>
+
+      <!--Form End-->
+
+    </div>
+
+    <footer class="footer">
+
+      <small class="footer__atribution">
+        Challenge by <a class="footer__text-bold bold" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend
+          Mentor</a>.
+        Coded by <a class="footer__text-bold bold" href="#">Ryuse</a>.
+        </small>
+
+    </footer>
+
+  </section>
+  
+
+  <script src="./dist/js/script.js"></script>
+
+</body>
+
+</html>
