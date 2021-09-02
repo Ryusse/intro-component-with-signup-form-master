@@ -35,7 +35,7 @@ function browserSyncServe(cb) {
 	browsersync.init({
 		server: {
 			baseDir: '.',
-			index: './index.html'
+			index: './public/index.html'
 		},
 		notify: {
 			styles: {
