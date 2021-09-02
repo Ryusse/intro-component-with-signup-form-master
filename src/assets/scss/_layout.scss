@@ -12,10 +12,10 @@ body {
   padding: 3rem 0;
   margin: auto;
   display: grid;
-  grid-template-columns: 5% 1fr 5%;
+  grid-template-columns: 4vw 1fr 4vw;
   grid-template-rows: auto;
   place-items: center;
-  gap: 3.5rem 1rem;
+  row-gap: 3.5rem;
 
   grid-template-areas:
     ".  title    ."
