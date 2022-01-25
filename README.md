@@ -1,8 +1,5 @@
 # Frontend Mentor - Intro component with sign up form solution
 
-
-### The challenge
-
 ### Demo
 
 - Solution URL: [View demo](https://intro-component-with-singup-form-master.netlify.app/)
